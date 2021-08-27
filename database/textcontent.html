@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+    <title>Document</title>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: rgb(110, 99, 99);
+            animation: body 1s linear;
+        }
+        
+        .headline {
+            text-align: center;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: calc(5em + 5vw);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .isomorph-o {
+            -moz-box-shadow: 4px 0px 24px #b6b6b6 !important;
+            -webkit-box-shadow: 4px 0px 24px #b6b6b6 !important;
+            box-shadow: 4px 0px 24px #b6b6b6 !important;
+            -webkit-border-radius: 12px !important;
+            -moz-border-radius: 12px !important;
+            border-radius: 12px !important;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        
+        .isomorph-o:hover {
+            filter: contrast(65%) !important;
+            transform: scale(1.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .box {
+            background-color: papayawhip;
+            width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="headline"></h1>
+    <input type="text" name="hello" value="hello" class="val" />
+    <span></span>
+    <div class="slid"></div>
+
+    <div class="wrapper">
+        <div class="sticky"></div>
+    </div>
+
+    <script>
+        const headline = document.querySelector(".headline");
+        const divs = document.querySelectorAll("div");
+        const inValue = document.querySelector(".val");
+        const btn = document.createElement("button");
+        const span = document.querySelector("span");
+
+        console.log(btn);
+        //create function
+
+        headline.style.fontSize = "calc(2em + 5vw)";
+        inValue.style.fontSize = "3em";
+        inValue.addEventListener("click", (e) => {
+            if (inValue.getAttribute("type") == "text") {
+                inValue.setAttribute("type", "number");
+            } else {
+                inValue.setAttribute("type", "text");
+            }
+        });
+
+        function clickHandler(e) {
+            console.log(e.target);
+            e.target.classList.toggle("box");
+        }
+        divs.forEach((div, i) => {
+            inValue.value = i;
+            console.log(div);
+            div.textContent = `<h3>Hello World</h3> +  ${inValue.value + 1}`;
+            div.innerHTML = `<h3>Hello world</h3> + ${inValue.value + 1}`;
+        });
+
+        headline.textContent = `Javascript`;
+        const val1 = span.append(btn);
+        const val2 = span.appendChild(btn);
+
+        headline.addEventListener("click", (e) => {
+            console.log(e.target);
+
+            if (headline.textContent == "Javascript") {
+                headline.textContent = "test";
+            } else {
+                headline.textContent = "Javascript";
+                headline.style.backgroundImage = "";
+            }
+        });
+
+        btn.classList.add("isomorph-o");
+        btn.textContent = "click me";
+        let counter = 0;
+
+        btn.addEventListener("click", (e) => {
+            const newDiv = document.createElement("div");
+            document.body.append(newDiv);
+            counter++;
+            newDiv.textContent = `${inValue.value} + ${counter}`;
+            newDiv.addEventListener("click", clickHandler);
+        });
+    </script>
+</body>
+
+</html>

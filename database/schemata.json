@@ -1,0 +1,55 @@
+{
+    "profiles": [{
+            "_id": 0,
+            "username": "Ola",
+            "email": "ola@gmail.com"
+        },
+        {
+            "_id": 1,
+            "username": "Olsa",
+            "email": "olsa@gmail.com"
+        }
+    ],
+    "product": [{
+            "p_id": 0,
+            "title": "Soy-base organic candles",
+            "tag": ["minimalist", "vegetable-base", "organic", "healthy", "dietary"],
+            "description": "",
+            "SKU": "",
+            "img": []
+        },
+        {
+            "p_id": 1,
+            "title": "Soy-base organic candles",
+            "tag": ["minimalist", "vegetable-base", "organic", "healthy", "dietary"],
+            "description": "",
+            "SKU": "",
+            "img": []
+        }
+    ],
+
+    "tag": {
+        "t_id": 0,
+        "material": ["100%cotton", "silk", "soft", "earth-friendly", "therapeutic"],
+        "place": ["at home", "funky", "comfy", "outdoor", "mart"],
+        "verb": [
+            "jogging",
+            "stay-at-home",
+            "running",
+            "havin a picnic",
+            "out dating",
+            "dining"
+        ],
+        "good": ["awesome", "feel-good", "best", "bargain", "top"],
+        "neutral": ["meh", "just ok", "okay", "low profile", "needs"],
+        "bad": [
+            "awful",
+            "ridiculous",
+            "poor",
+            "low-quality",
+            "too expensive",
+            "wtf"
+        ],
+        "timestamp": {}
+    }
+}
