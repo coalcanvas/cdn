@@ -1,4 +1,4 @@
 # cdn
-hosting my:
+hosting collections of:
 - images
 - scripts
